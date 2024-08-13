@@ -1,0 +1,96 @@
+.face-draw {
+  margin-bottom: 24px;
+}
+
+.face-draw__shape {
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* eyes */
+
+.face-draw__shape .face-draw__shape__eyes {
+  display: flex;
+  gap: 20px;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+}
+
+.face-draw__shape .face-draw__shape__eyes span {
+  background-color: var(--color-face);
+  height: 130px;
+  display: block;
+  width: 130px;
+  border-radius: 100%;
+  transition: 400ms;
+}
+
+/* mouth */
+
+.face-draw__shape .face-draw__shape__mouth {
+  margin-top: -42px;
+  transition: 400ms;
+}
+
+.face-draw__shape .face-draw__shape__mouth span {
+  width: 76px;
+  height: 95px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  unicode-bidi: isolate;
+  transform: rotateX(52deg);
+  background:
+    linear-gradient(var(--color-bg), var(--color-bg)) top / 100% 50px no-repeat,
+    radial-gradient(farthest-side, transparent calc(99% - 20px), var(--color-face) calc(100% - 20px));
+}
+
+.face-draw__shape .face-draw__shape__mouth span::before,
+.face-draw__shape .face-draw__shape__mouth span::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  right: 0;
+  position: absolute;
+  top: calc(50% - 8px);
+  transform: rotate(calc(var(80deg, 0deg) - 50deg));
+  background: radial-gradient(circle closest-side, var(--color-face) 99%, transparent) -10px 0 / 200% 100%;
+}
+
+.face-draw__shape .face-draw__shape__mouth span::before {
+  right: calc(100% - 20px);
+}
+
+/* label */
+
+.face-draw .face-label {
+  overflow: hidden;
+  transition: 200ms;
+}
+
+.face-draw .face-label__slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+  flex-direction: row-reverse;
+}
+
+.face-draw .face-label .face-label__slide {
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.face-draw .face-label .face-label__slide > p {
+  margin: 0;
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: -4px;
+  color: var(--color-label);
+}

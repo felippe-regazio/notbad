@@ -1,0 +1,23 @@
+.actions textarea {
+  background-color: rgba(100, 100, 100, .2);
+  border: none;
+  margin: 0;
+  transition: 200ms;
+  padding: 16px;
+  border-radius: 25px;
+  font-size: 16px;
+  resize: none;
+  width: 100%;
+  display: block;
+  transition: 200ms;
+  height: 48px;
+  white-space: pre;
+  color: rgba(100, 100, 100, .3);
+}
+
+.actions textarea:active,
+.actions textarea:focus-visible {
+  color: #444;
+  white-space: initial;
+  outline: solid 2px rgba(100, 100, 100, .3);
+}

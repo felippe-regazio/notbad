@@ -1,0 +1,111 @@
+.range {
+  max-width: 300px;
+  margin: 0 auto;
+  transition: 200ms;
+  padding-bottom: 100px;
+}
+
+.range .range__input {
+  position: relative;
+}
+
+.range .range__input input {
+  top: 50%;
+  width: 100%;
+  appearance: none;
+  position: absolute;
+  transition: 200ms;
+  transform: translateY(-50%);
+  -webkit-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.range .range__input__bullets span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;  
+  background-color: var(--color-label);
+}
+
+.range .range__input__bullets::before {
+  content: "";
+  width: 100%;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-label);
+}
+
+.range .range__input__bullets span {
+  left: calc(50% - (24px / 2));
+  /* transform: translate(-50%, -50%); */
+}
+
+.range .range__input__bullets span:first-of-type {
+  left: 0;
+}
+
+.range .range__input__bullets span:last-of-type {
+  right: 0;
+  left: unset;
+}
+
+.range .range__input__bullets span::after {
+  content: attr(data-label);
+  white-space: nowrap;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  font-size: 14px;
+  transform: translateX(-50%);
+  color: var(--color-label);
+  filter: brightness(.6);  
+}
+
+/*
+  for some broswer engine issue, if you do:
+  
+  .range .range__input input::-webkit-slider-thumb,
+  .range .range__input input::-moz-range-thumb {
+    ...
+  }
+
+  these styles wont be applied.
+*/
+
+.range .range__input input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 200ms;
+  border-radius: 100%;
+  background: var(--color-face);
+  background-image: url(../icons/smile.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -3px;
+}
+
+.range .range__input input::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  transition: 200ms;
+  cursor: pointer;
+  border-radius: 100%;
+  background: var(--color-face);
+  background-image: url(../icons/smile.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -3px;
+}
+
+/* ----- */

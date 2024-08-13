@@ -1,0 +1,46 @@
+button {
+  background-color: rgba(100, 100, 100, .2);
+  border: none;
+  margin: 0;
+  min-height: 48px;
+  line-height: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: 200ms;
+  color: #444;
+  padding: 0 16px;
+  border-radius: 25px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 16px;
+}
+
+button img {
+  height: 18px;
+}
+
+button:hover {
+  background-color: rgba(100, 100, 100, .4);
+}
+
+button.button--rounded {
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  padding: 0;
+}
+
+/* solid */
+
+button.button--solid {
+  color: #fafafa;
+  background-color: var(--color-face);
+}
+
+button.button--solid:hover {
+  background-color: var(--color-face);
+  filter: brightness(1.3);
+}

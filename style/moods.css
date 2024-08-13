@@ -1,0 +1,66 @@
+/* NOT BAD */
+
+[data-mood="not-bad"] {
+  --color-bg: #FDC959;
+  --color-label: #CF7330;
+}
+
+[data-mood="not-bad"] .face-draw__shape .face-draw__shape__eyes span {
+  height: 38px;
+  width: 120px;
+  border-radius: 25px;
+}
+
+[data-mood="not-bad"] .face-draw__shape .face-draw__shape__mouth {
+  transform: rotate(-180deg) translateY(10px);
+}
+
+[data-mood="not-bad"] .face-label__slider {
+  transform: translateX(100%);
+}
+
+[data-mood="not-bad"] .range .range__input input::-webkit-slider-thumb {
+  transform: rotate(-180deg);
+}
+
+[data-mood="not-bad"] .range .range__input input::-moz-range-thumb {
+  transform: rotate(-180deg);
+}
+
+/* BAD */
+
+[data-mood="bad"] {
+  --color-bg: #ffbfbf;
+  --color-label: #FF6868;
+  --color-face: #640000;
+}
+
+[data-mood="bad"] .face-draw__shape .face-draw__shape__eyes span {
+  height: 66px;
+  width: 66px;
+  margin: 16px;
+}
+
+[data-mood="bad"] .face-draw__shape .face-draw__shape__eyes span:first-of-type {
+  transform: rotate(-90deg);
+}
+
+[data-mood="bad"] .face-draw__shape .face-draw__shape__eyes span:last-of-type {
+  transform: rotate(90deg);
+}
+
+[data-mood="bad"] .face-draw__shape .face-draw__shape__mouth {
+  transform: rotate(-180deg) translateY(10px);
+}
+
+[data-mood="bad"] .face-label__slider {
+  transform: translateX(200%);
+}
+
+[data-mood="bad"] .range .range__input input::-webkit-slider-thumb {
+  transform: rotate(-180deg);
+}
+
+[data-mood="bad"] .range .range__input input::-moz-range-thumb {
+  transform: rotate(-180deg);
+}

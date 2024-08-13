@@ -1,0 +1,140 @@
+:root {
+  --color-bg: #d5f06c;
+  --color-face: #0c2d1c;
+  --color-label: #b0d000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: 380px;
+  margin: 0 auto;
+  display: block;
+  padding: 16px 24px;
+}
+
+.facebox header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.facebox .title {
+  padding: 16px;
+  transition: 200ms;
+  text-align: center;
+}
+
+.facebox .title h1 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.facebox .actions {
+  position: relative;
+  padding: 0 14px;
+}
+
+.facebox .actions button[type=submit] {
+  position: absolute;
+  right: 14px;
+  top: 0;
+}
+
+.facebox .actions:focus-within textarea {
+  height: 136px;
+  max-height: unset;
+}
+
+.facebox .actions:focus-within button[type=submit] {
+  top: unset;
+  bottom: 8px;
+  right: 20px;
+}
+
+[data-clean=true] .title,
+[data-submitted=true] .title {
+  margin-top: -90px;
+  visibility: hidden;
+  transition: 200ms;
+  opacity: 0;
+}
+
+[data-clean=true] .face-draw .face-label,
+[data-clean=true] #main-form .range,
+[data-submitted=true] .face-draw .face-label,
+[data-submitted=true] #main-form .range {
+  transform: translateX(-100px);
+  visibility: hidden;
+  transition: 200ms;
+  opacity: 0;
+}
+
+[data-clean=true] .actions {
+  transform: translateY(-180px);
+  transition: 400ms;
+}
+
+[data-submitted=true] .actions {
+  opacity: 0;
+  visibility: none;
+}
+
+[data-submitted=true] form#main-form {
+  display: none;
+}
+
+.submitted {
+  text-align: center;
+  transform: translateY(-90px);
+}
+
+.submitted .submitted__message h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 16px;
+  color: var(--color-face);
+  animation: fadeInUp 200ms linear forwards;
+}
+
+.submitted .submitted__message p {
+  margin: 0;
+  margin-bottom: 100px;
+  color: var(--color-face);
+  animation: fadeInUp 200ms linear forwards;
+}
+
+.submitted .submitted__actions button {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

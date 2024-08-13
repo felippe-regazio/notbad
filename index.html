@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not Bad</title>
+
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/general.css">
+  <link rel="stylesheet" href="./style/note.css">
+  <link rel="stylesheet" href="./style/button.css">
+  <link rel="stylesheet" href="./style/face-draw.css">
+  <link rel="stylesheet" href="./style/range.css">
+  <link rel="stylesheet" href="./style/moods.css">
+</head>
+<body
+  data-mood="good"
+  data-clean="false"
+  data-submitted="false"
+>
+  <main>
+    <div class="container">
+      <div class="facebox">
+        <header>
+          <button class="button--rounded" title="Close button" onclick="closeButtonAction()">
+            <img src="./icons/close.svg" alt="Close button icon: A 'X' vector" />
+          </button>
+
+          <button class="button--rounded" title="Info button" onclick="infoButtonAction()">
+            <img src="./icons/info-outlined.svg" alt="Info button icon: An 'i' inside a outlined circle" />
+          </button>
+        </header>
+
+        <div class="title">
+          <h1>How was your shopping experience?</h1>
+        </div>
+
+        <div class="face-draw">
+          <div class="face-draw__shape" aria-hidden>
+            <div class="face-draw__shape__eyes">
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="face-draw__shape__mouth">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="face-label">
+            <div class="face-label__slider">
+              <div class="face-label__slide">
+                <p>GOOD</p>
+              </div>
+  
+              <div class="face-label__slide">
+                <p>NOT BAD</p>
+              </div>
+              
+              <div class="face-label__slide">
+                <p>BAD</p>
+              </div>    
+            </div>
+          </div>
+        </div>
+
+        <form id="main-form" action="/">
+          <div class="range">
+            <div class="range__input">
+              <div class="range__input__bullets">
+                <span data-label="Bad"></span>
+                <span data-label="Not bad"></span>
+                <span data-label="Good"></span>
+              </div>
+  
+              <input
+                min="0"
+                max="100"
+                value="100"
+                type="range"
+                name="score"
+                id="main-range"
+                aria-valuetext="good"
+              />            
+            </div>
+          </div>
+  
+          <div class="actions">
+            <textarea
+              type="text"
+              name="note"
+              maxlength="100"
+              placeholder="Add Note"
+            ></textarea>
+  
+            <button type="submit" class="button--solid">
+              Submit <img src="./icons/arrow-right.svg">
+            </button>
+          </div>
+        </form>
+
+        <template id="submitted">
+          <div class="submitted__message">
+            <h2>Thank you for your feedback!</h2>
+            <p>We're working hard to improve</p>
+          </div>
+
+          <div class="submitted__actions">
+            <button class="button--solid">
+              Continue my shopping <img src="./icons/arrow-right.svg">
+            </button>
+          </div>
+        </template>
+
+        <div class="submitted"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./script/range.js"></script>
+  <script src="./script/note.js"></script>
+  <script src="./script/submit.js"></script>
+  <script src="./script/header.js"></script>
+</body>
+</html>
