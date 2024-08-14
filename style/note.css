@@ -13,6 +13,7 @@
   height: 48px;
   white-space: pre;
   color: rgba(100, 100, 100, .3);
+  overflow: hidden;
 }
 
 .actions textarea:active,
